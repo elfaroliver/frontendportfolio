@@ -1,0 +1,188 @@
+body {
+  background-color:orange;
+  margin: 0;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  align-self: center;
+  align-items: center; 
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/*.button-left, .button-right {
+  position: absolute;     
+  top: 50%;                 
+  transform: translateY(-50%);
+}*/
+
+.button-left, .button-right {
+  position: absolute;
+  top: 10%;
+  bottom: 0;           /* stretch from top to bottom */
+  width: 6%;           /* full gutter width */
+  background-color: rgba(0,0,0,0.2); /* semi-transparent for visual */
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-left {
+  left: 0;                 /* left gutter */
+  background-color: rgb(231, 175, 71);
+}
+
+.button-right {
+  right: 0;                /* right gutter */
+  background-color: rgb(231, 175, 71);
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+.card {
+  background-color: cornflowerblue;
+  min-width: 250px;
+  min-height: 350px;
+  max-width: 250px;
+  max-height: 350px;
+  border: 2px solid black;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.checked {
+  color: orange;
+}
+
+@font-face {
+  font-family: Roboto-Regular;
+  src: url('./fonts/Roboto-Regular.ttf') format('woff2');
+}
+
+@font-face {
+  font-family: Roboto-Light;
+  src: url('./fonts/Roboto-Light.ttf') format('woff2');
+}*/
+
+:root {
+  --columns: 12;
+  --gutter: 30px;
+  --offset: 20px;
+
+  --width-offset: calc(100% - (2 * var(--offset)));
+}
+
+html {
+  box-sizing: border-box;
+}
+
+/* og látum erfast á allt */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.navcard {
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  justify-content: flex-end;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: row;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 10%;
+  background-color: lightgrey;
+  border-bottom: 2px solid black;
+  margin-bottom: 2rem;
+}
+
+.navbar p {
+  padding: 40px;
+  display: inline-block;
+  justify-content: center;
+  margin-right: 10px;
+  text-align: center;
+  font-family: Roboto-Regular;
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+  color: crimson;
+}
+
+p {
+  margin-bottom: 0.5rem;
+  font-family: Roboto-Light;
+  font-weight: bold;
+  font-size: large;
+}
+
+li {
+  font-family: Roboto-Regular;
+  margin-bottom: 0.35rem;
+}
+
+a {
+  color: crimson;
+  text-decoration: none;
+  justify-content: stretch;
+}
+
+a:link {
+  color:crimson;
+  text-decoration: none;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+@media (max-width: 600px) {
+  .cards {
+    flex-direction: column; 
+    /* align-items: center;  */
+  }
+
+  .card {
+    margin: 0.5rem;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navcard {
+    margin-bottom: 10px;
+  }
+}
